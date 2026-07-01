@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Wazifni")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcbd99d65c5325567fb16439d6cbc54c5be97796")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9277082fdfc95f95c437b90c8c3c1669865e1b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Wazifni")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Wazifni")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
