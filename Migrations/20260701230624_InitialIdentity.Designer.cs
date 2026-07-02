@@ -11,8 +11,8 @@ using Wazifni.Data;
 namespace Wazifni.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260701210055_FirstTables")]
-    partial class FirstTables
+    [Migration("20260701230624_InitialIdentity")]
+    partial class InitialIdentity
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
