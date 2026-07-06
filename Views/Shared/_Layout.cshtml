@@ -1,89 +1,137 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Wazifni</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>@ViewData["Title"] - وظفني</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Wazifni.styles.css" asp-append-version="true" />
+    <style>
+        :root,[data-theme="light"]{--bg:#f4f6fb;--surface:#fff;--surface-2:#f1f3f5;--text:#212529;--muted:#6c757d;--primary:#0d6efd;--primary-2:#0a58ca;--border:rgba(33,37,41,.10);--shadow:0 8px 28px rgba(13,110,253,.07)}
+        [data-theme="dark"]{--bg:#111315;--surface:#1a1d21;--surface-2:#242830;--text:#f1f3f5;--muted:#adb5bd;--primary:#5c9cff;--primary-2:#3d7ef0;--border:rgba(255,255,255,.10);--shadow:0 12px 36px rgba(0,0,0,.35)}
+        body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+        .wz-nav{backdrop-filter:blur(14px);background:rgba(255,255,255,.90);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+        [data-theme="dark"] .wz-nav{background:rgba(26,29,33,.92)}
+        .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.15rem;color:var(--primary)!important;text-decoration:none}
+        .brand-mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-2));display:grid;place-items:center;color:#fff;flex-shrink:0}
+        .theme-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;display:grid;place-items:center;transition:.2s}
+        .theme-btn:hover{border-color:var(--primary);color:var(--primary)}
+        .wz-footer{border-top:1px solid var(--border);background:var(--surface);padding:1.25rem 0;margin-top:auto}
+        .nav-pill{border-radius:999px;padding:.5rem 1rem}
+        .nav-link{font-weight:600}
+        [data-theme="dark"] .nav-link{color:var(--text)!important}
+        [data-theme="dark"] .text-muted{color:var(--muted)!important}
+        [data-theme="dark"] .navbar-toggler-icon{filter:invert(1)}
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    <header class="wz-nav shadow-sm">
+        <div class="container py-2">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                <a class="brand" asp-controller="Home" asp-action="Index">
+                    <span class="brand-mark"><i class="bi bi-briefcase-fill"></i></span>
+                    <span>وظفني</span>
+                </a>
 
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
+                <button class="navbar-toggler border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav">
-
-                    @if (User.Identity!.IsAuthenticated)
-                    {
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-1">
                         <li class="nav-item">
-                            <span class="nav-link">
-                                Welcome @User.Identity.Name
-                            </span>
+                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active text-primary fw-bold" : "")" asp-controller="Home" asp-action="Index">الرئيسية</a>
                         </li>
-
                         <li class="nav-item">
-                            <form asp-controller="Account"
-                                  asp-action="Logout"
-                                  method="post">
+                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["controller"]?.ToString() == "Department" ? "active text-primary fw-bold" : "")" asp-controller="Department" asp-action="Index">الأقسام</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Profile" ? "active text-primary fw-bold" : "")" asp-controller="Home" asp-action="Profile">تفاصيل المستقل</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Privacy" ? "active text-primary fw-bold" : "")" asp-controller="Home" asp-action="Privacy">الخصوصية</a>
+                        </li>
+                    </ul>
 
-                                <button type="submit" class="btn btn-link nav-link">
-                                    Logout
-                                </button>
-
+                    <div class="d-flex align-items-center gap-2">
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <span class="d-none d-lg-inline text-muted small">مرحباً @User.Identity.Name</span>
+                            <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                <button type="submit" class="btn btn-outline-primary rounded-pill px-3">تسجيل الخروج</button>
                             </form>
-                        </li>
-                    }
-                    else
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               asp-controller="Account"
-                               asp-action="Login">
-                                Login
-                            </a>
-                        </li>
+                        }
+                        else
+                        {
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary rounded-pill px-3">تسجيل الدخول</a>
+                            <a asp-controller="Account" asp-action="Register" class="btn btn-primary rounded-pill px-3">انضم كمستقل</a>
+                        }
 
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               asp-controller="Account"
-                               asp-action="Register">
-                                Register
-                            </a>
-                        </li>
-                    }
-
-                </ul>
-
-            </div>
-        </nav>
+                        <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle theme">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - Wazifni - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <main role="main" class="flex-grow-1">
+        @RenderBody()
+    </main>
+
+    <footer class="wz-footer">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+            <div>
+                <span class="fw-bold text-primary">وظفني</span>
+                <span class="text-muted mx-2">—</span>
+                <small class="text-muted">منصة ربط المستقلين بأصحاب الأعمال &copy; 2026</small>
+            </div>
+            <div class="d-flex gap-3 small">
+                <a asp-controller="Home" asp-action="Index" class="text-muted text-decoration-none">الرئيسية</a>
+                <a asp-controller="Department" asp-action="Index" class="text-muted text-decoration-none">الأقسام</a>
+                <a asp-controller="Home" asp-action="Profile" class="text-muted text-decoration-none">التفاصيل</a>
+            </div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function () {
+            var root = document.documentElement;
+            var btn = document.querySelector('[data-theme-toggle]');
+            var stored = localStorage.getItem('wz-theme');
+            var theme = stored ? stored : (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+
+            root.setAttribute('data-theme', theme);
+
+            function syncIcon() {
+                if (!btn) {
+                    return;
+                }
+
+                btn.innerHTML = theme === 'dark'
+                    ? '<i class="bi bi-sun"></i>'
+                    : '<i class="bi bi-moon-stars"></i>';
+            }
+
+            syncIcon();
+
+            if (btn) {
+                btn.addEventListener('click', function () {
+                    theme = theme === 'dark' ? 'light' : 'dark';
+                    root.setAttribute('data-theme', theme);
+                    localStorage.setItem('wz-theme', theme);
+                    syncIcon();
+                });
+            }
+        })();
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
