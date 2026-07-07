@@ -51,17 +51,14 @@
                             <a class="nav-link nav-pill @(ViewContext.RouteData.Values["controller"]?.ToString() == "Department" ? "active text-primary fw-bold" : "")" asp-controller="Department" asp-action="Index">الأقسام</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Profile" ? "active text-primary fw-bold" : "")" asp-controller="Home" asp-action="Profile">تفاصيل المستقل</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Privacy" ? "active text-primary fw-bold" : "")" asp-controller="Home" asp-action="Privacy">الخصوصية</a>
+                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["action"]?.ToString() == "Dashboard" ? "active text-primary fw-bold" : "")" asp-controller="Home" asp-action="Dashboard">لوحة التحكم</a>
                         </li>
                     </ul>
 
                     <div class="d-flex align-items-center gap-2">
                         @if (User.Identity?.IsAuthenticated == true)
                         {
-                            <span class="d-none d-lg-inline text-muted small">مرحباً @User.Identity.Name</span>
+                            <a asp-controller="Home" asp-action="MyProfile" class="btn btn-outline-primary rounded-pill px-3">الملف الشخصي</a>
                             <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
                                 <button type="submit" class="btn btn-outline-primary rounded-pill px-3">تسجيل الخروج</button>
                             </form>

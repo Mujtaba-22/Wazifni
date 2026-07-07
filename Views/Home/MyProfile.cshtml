@@ -1,0 +1,175 @@
+@model FreelancerProfileViewModel
+
+@{
+    ViewData["Title"] = "ملفي الشخصي";
+}
+
+<section class="py-4">
+    <div class="container">
+        <nav aria-label="breadcrumb" class="mb-3">
+            <ol class="breadcrumb bg-transparent p-0 mb-0">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" class="text-decoration-none">الرئيسية</a></li>
+                <li class="breadcrumb-item active">ملفي الشخصي</li>
+            </ol>
+        </nav>
+
+        <form asp-controller="Freelancer" asp-action="MyProfile" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger d-none" id="validationSummary"></div>
+
+            <div class="card border-0 shadow-sm overflow-hidden rounded-4">
+                <div class="bg-primary bg-gradient text-white p-4 p-md-5">
+                    <div class="d-flex flex-column flex-md-row align-items-center gap-3">
+                        <div class="position-relative">
+
+                            <label for="avatarInput" class="btn btn-sm btn-light rounded-circle position-absolute bottom-0 end-0 p-1" title="تغيير الصورة">
+                                <i class="bi bi-camera"></i>
+                            </label>
+                            <input type="file" id="avatarInput" name="AvatarFile" accept="image/*" class="d-none" />
+                        </div>
+
+                        <div class="flex-grow-1 text-center text-md-start">
+                            <input asp-for="FullName" class="form-control form-control-lg bg-transparent text-white border-0 border-bottom fw-bold mb-1 p-0" placeholder="الاسم الكامل" style="max-width:320px;" />
+                            <span asp-validation-for="FullName" class="text-warning small d-block"></span>
+
+                            <input asp-for="Title" class="form-control bg-transparent text-white-50 border-0 border-bottom p-0" placeholder="المسمى المهني" style="max-width:320px;" />
+
+                            <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start mt-3">
+                                <span class="badge bg-white text-primary rounded-pill px-3 py-2">@Model.DepartmentName</span>
+                                <span class="badge bg-white text-primary rounded-pill px-3 py-2">@Model.Title</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2 flex-wrap justify-content-center">
+                            <button type="submit" class="btn btn-light rounded-pill px-4">
+                                <i class="bi bi-check2-circle me-1"></i>حفظ التغييرات
+                            </button>
+                            <a asp-action="FreelancerProfile" asp-route-FullName="@Model.FullName" class="btn btn-outline-light rounded-pill px-4">
+                                إلغاء
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body p-4 p-md-5">
+                    <div class="row g-4">
+                        <div class="col-lg-8">
+                            <h2 class="h5 fw-bold mb-3">النبذة التعريفية</h2>
+                            <textarea asp-for="Bio" class="form-control" rows="5" placeholder="اكتب نبذة مختصرة عنك..."></textarea>
+                            <span asp-validation-for="Bio" class="text-danger small"></span>
+
+                            <h3 class="h6 fw-bold mt-4 mb-3">المهارات</h3>
+                            <div class="d-flex flex-wrap gap-2 mb-2" id="skillsContainer">
+                                @foreach (var skill in Model.Skills)
+                                {
+                                    <span class="badge text-bg-light border d-flex align-items-center gap-1">
+                                        @skill
+                                        <input type="hidden" name="Skills" value="@skill" />
+                                        <i class="bi bi-x-circle remove-skill" style="cursor:pointer;"></i>
+                                    </span>
+                                }
+                            </div>
+                            <div class="input-group" style="max-width:320px;">
+                                <input type="text" id="newSkillInput" class="form-control" placeholder="أضف مهارة جديدة" />
+                                <button type="button" id="addSkillBtn" class="btn btn-outline-primary"><i class="bi bi-plus-lg"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="border rounded-4 p-4 bg-body-tertiary h-100">
+                                <h2 class="h6 fw-bold mb-3">معلومات إضافية</h2>
+                                <div class="d-grid gap-3">
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <div class="bg-primary-subtle text-primary rounded-3 d-grid place-items-center" style="width:40px;height:40px;"><i class="bi bi-diagram-3"></i></div>
+                                        <div class="flex-grow-1">
+                                            <small class="text-muted d-block">القسم</small>
+                                            <span class="fw-semibold">@Model.DepartmentName</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <div class="d-flex justify-content-center bg-primary-subtle text-primary rounded-3 d-grid place-items-center" style="width:40px;height:40px;"><i class="bi bi-envelope"></i></div>
+                                        <div class="flex-grow-1">
+                                            <small class="text-muted d-block">البريد الإلكتروني</small>
+                                            <span class="fw-semibold">@Model.Email</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <div class="bg-primary-subtle text-primary rounded-3 d-grid place-items-center" style="width:40px;height:40px;"><i class="bi bi-telephone"></i></div>
+                                        <div class="flex-grow-1">
+                                            <small class="text-muted d-block">الجوال</small>
+                                            <span class="fw-semibold">@Model.Phone</span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <div class="bg-primary-subtle text-primary rounded-3 d-grid place-items-center" style="width:40px;height:40px;"><i class="bi bi-geo-alt"></i></div>
+                                        <div class="flex-grow-1">
+                                            <small class="text-muted d-block">المدينة</small>
+                                            <input asp-for="City" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <div class="bg-primary-subtle text-primary rounded-3 d-grid place-items-center" style="width:40px;height:40px;"><i class="bi bi-briefcase"></i></div>
+                                        <div class="flex-grow-1">
+                                            <small class="text-muted d-block">سنوات الخبرة</small>
+                                            <input asp-for="YearsExperience" type="number" min="0" class="form-control form-control-sm" style="max-width:100px;" />
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex gap-3 align-items-center">
+                                        <div class="bg-primary-subtle text-primary rounded-3 d-grid place-items-center" style="width:40px;height:40px;"><i class="bi bi-file-earmark-person"></i></div>
+                                        <div class="flex-grow-1">
+                                            <small class="text-muted d-block">السيرة الذاتية</small>
+                                            @if (!string.IsNullOrEmpty(Model.CvUrl))
+                                            {
+                                                <a href="@Model.CvUrl" download class="text-decoration-none fw-semibold d-block mb-1">تحميل CV الحالي</a>
+                                            }
+                                            <input type="file" name="CvFile" accept=".pdf,.doc,.docx" class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        document.getElementById('avatarInput').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (ev) {
+                    const container = document.getElementById('avatarInput').previousElementSibling;
+                    container.innerHTML = '<img src="' + ev.target.result + '" style="width:100%;height:100%;object-fit:cover;" />';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('addSkillBtn').addEventListener('click', function () {
+            const input = document.getElementById('newSkillInput');
+            const value = input.value.trim();
+            if (!value) return;
+            const container = document.getElementById('skillsContainer');
+            const span = document.createElement('span');
+            span.className = 'badge text-bg-light border d-flex align-items-center gap-1';
+            span.innerHTML = value + ' <input type="hidden" name="Skills" value="' + value + '" /> <i class="bi bi-x-circle remove-skill" style="cursor:pointer;"></i>';
+            container.appendChild(span);
+            input.value = '';
+        });
+
+        document.getElementById('skillsContainer').addEventListener('click', function (e) {
+            if (e.target.classList.contains('remove-skill')) {
+                e.target.closest('span').remove();
+            }
+        });
+    </script>
+}

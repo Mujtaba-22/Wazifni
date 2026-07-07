@@ -286,12 +286,25 @@ namespace Wazifni.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("SkillId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("YearsExperience")
                         .HasColumnType("int");
 
                     b.HasKey("FreelancerId");
 
                     b.HasIndex("DeptId");
+
+                    b.HasIndex("SkillId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Freelancers");
                 });
@@ -368,10 +381,39 @@ namespace Wazifni.Migrations
             modelBuilder.Entity("Wazifni.Models.Freelancer", b =>
                 {
                     b.HasOne("Wazifni.Models.Department", "Department")
-                        .WithMany()
+                        .WithMany("Freelancers")
                         .HasForeignKey("DeptId");
 
+                    b.HasOne("Wazifni.Models.Skill", "SkillEntity")
+                        .WithMany("Freelancers")
+                        .HasForeignKey("SkillId");
+
+                    b.HasOne("Wazifni.Models.ApplicationUser", "User")
+                        .WithOne("Freelancer")
+                        .HasForeignKey("Wazifni.Models.Freelancer", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Department");
+
+                    b.Navigation("SkillEntity");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Wazifni.Models.ApplicationUser", b =>
+                {
+                    b.Navigation("Freelancer");
+                });
+
+            modelBuilder.Entity("Wazifni.Models.Department", b =>
+                {
+                    b.Navigation("Freelancers");
+                });
+
+            modelBuilder.Entity("Wazifni.Models.Skill", b =>
+                {
+                    b.Navigation("Freelancers");
                 });
 #pragma warning restore 612, 618
         }

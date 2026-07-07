@@ -1,4 +1,6 @@
-﻿@{
+﻿@model HomeIndexViewModel
+
+@{
     ViewData["Title"] = "الرئيسية";
 }
 
@@ -6,9 +8,9 @@
     <div class="container">
         <div class="row align-items-center g-4">
             <div class="col-lg-7">
-                <span class="badge bg-primary-subtle text-primary fw-bold rounded-pill px-3 py-2 mb-3">منصة العمل الحر</span>
-                <h1 class="display-5 fw-bolder mb-3">أنجز أعمالك مع أفضل المستقلين المحترفين</h1>
-                <p class="lead text-muted mb-4">وظفني تربط أصحاب الأعمال بالمستقلين في البرمجة، القانون، التعليم والتدريب.</p>
+                <span class="badge bg-primary-subtle text-primary fw-bold rounded-pill px-3 py-2 mb-3">@Model.HeroBadge</span>
+                <h1 class="display-5 fw-bolder mb-3">@Model.HeroTitle</h1>
+                <p class="lead text-muted mb-4">@Model.HeroDescription</p>
                 <div class="d-flex flex-wrap gap-2">
                     <a asp-controller="Department" asp-action="Index" class="btn btn-primary rounded-pill px-4">استكشف الأقسام</a>
                     <a asp-controller="Home" asp-action="Profile" class="btn btn-outline-primary rounded-pill px-4">عرض ملف مستقل</a>
@@ -19,9 +21,10 @@
                     <div class="card-body p-4 p-md-5">
                         <h2 class="h4 fw-bold mb-3">لماذا وظفني؟</h2>
                         <ul class="list-unstyled mb-0 d-grid gap-3">
-                            <li class="d-flex gap-3"><i class="bi bi-check-circle-fill text-primary fs-5"></i><span>واجهة عربية واضحة وسهلة التصفح.</span></li>
-                            <li class="d-flex gap-3"><i class="bi bi-check-circle-fill text-primary fs-5"></i><span>صفحات جاهزة لعرض المستقلين والأقسام.</span></li>
-                            <li class="d-flex gap-3"><i class="bi bi-check-circle-fill text-primary fs-5"></i><span>تصميم Bootstrap متجاوب مع دعم الوضع الليلي.</span></li>
+                            @foreach (var feature in Model.Features)
+                            {
+                                <li class="d-flex gap-3"><i class="bi @feature.Icon text-primary fs-5"></i><span><strong>@feature.Title</strong> - @feature.Description</span></li>
+                            }
                         </ul>
                     </div>
                 </div>

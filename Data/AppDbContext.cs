@@ -17,5 +17,20 @@ namespace Wazifni.Data
 
         // لاحقًا إذا أنشأت جدول FreelancerSkill
         // public DbSet<FreelancerSkill> FreelancerSkills { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<ApplicationUser>()
+                .HasOne(user => user.Freelancer)
+                .WithOne(freelancer => freelancer.User)
+                .HasForeignKey<Freelancer>(freelancer => freelancer.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Freelancer>()
+                .Property(freelancer => freelancer.UserId)
+                .HasMaxLength(450);
+        }
     }
 }

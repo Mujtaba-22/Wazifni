@@ -11,6 +11,8 @@ namespace Wazifni.Models
         [StringLength(100)]
         public string Name { get; set; } = string.Empty;
 
+        public ICollection<Freelancer> Freelancers { get; set; } = new List<Freelancer>();
+
         
     }
 }

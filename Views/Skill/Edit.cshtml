@@ -1,0 +1,44 @@
+@model Wazifni.Models.Skill
+
+@{
+    ViewData["Title"] = "تعديل مهارة";
+}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4 p-md-5">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div>
+                                <h1 class="h3 fw-bold mb-1">تعديل المهارة</h1>
+                                <p class="text-muted mb-0">حدّث اسم المهارة ثم احفظ التغييرات.</p>
+                            </div>
+                            <a asp-controller="Home" asp-action="Dashboard" class="btn btn-outline-primary rounded-pill">رجوع</a>
+                        </div>
+
+                        <form asp-action="Edit" method="post">
+                            <input type="hidden" asp-for="SkillId" />
+                            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                            <div class="mb-3">
+                                <label asp-for="Name" class="form-label"></label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary rounded-pill px-4">حفظ التعديلات</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

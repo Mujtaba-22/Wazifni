@@ -45,6 +45,61 @@
                             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                         </div>
 
+                        <hr class="my-4" />
+
+                        <h5 class="mb-3">بيانات المستقل</h5>
+
+                        <div class="mb-3">
+                            <label asp-for="Phone" class="form-label">رقم الجوال</label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="DeptId" class="form-label">القسم</label>
+                            <select asp-for="DeptId" asp-items="Model.DepartmentOptions" class="form-select">
+                                <option value="">-- اختر القسم --</option>
+                            </select>
+                            <span asp-validation-for="DeptId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="SkillId" class="form-label">المهارة الرئيسية</label>
+                            <select asp-for="SkillId" asp-items="Model.SkillOptions" class="form-select">
+                                <option value="">-- اختر المهارة --</option>
+                            </select>
+                            <span asp-validation-for="SkillId" class="text-danger"></span>
+                        </div>
+                        <dialog class="mb-3">
+                            <label asp-for="YearsExperience" class="form-label">سنوات الخبرة</label>
+                            <input asp-for="YearsExperience" class="form-control" type="number" min="0" />
+                            <span asp-validation-for="YearsExperience" class="text-danger"></span>
+                        </dialog>
+
+                        <div class="mb-3">
+                            <label asp-for="Bio" class="form-label">نبذة مختصرة</label>
+                            <textarea asp-for="Bio" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Bio" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="City" class="form-label">المدينة</label>
+                            <input asp-for="City" class="form-control" />
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="LinkedInUrl" class="form-label">رابط LinkedIn</label>
+                            <input asp-for="LinkedInUrl" class="form-control" />
+                            <span asp-validation-for="LinkedInUrl" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CvUrl" class="form-label">رابط السيرة الذاتية</label>
+                            <input asp-for="CvUrl" class="form-control" />
+                            <span asp-validation-for="CvUrl" class="text-danger"></span>
+                        </div>
+
                         <button class="btn btn-primary w-100">
                             Register
                         </button>
