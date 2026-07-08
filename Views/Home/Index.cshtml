@@ -1,7 +1,8 @@
 ﻿@model HomeIndexViewModel
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @{
-    ViewData["Title"] = "الرئيسية";
+    ViewData["Title"] = SharedLocalizer["Wazifni"];
 }
 
 <section class="py-5">
@@ -12,8 +13,6 @@
                 <h1 class="display-5 fw-bolder mb-3">@Model.HeroTitle</h1>
                 <p class="lead text-muted mb-4">@Model.HeroDescription</p>
                 <div class="d-flex flex-wrap gap-2">
-                    <a asp-controller="Department" asp-action="Index" class="btn btn-primary rounded-pill px-4">استكشف الأقسام</a>
-                    <a asp-controller="Home" asp-action="Profile" class="btn btn-outline-primary rounded-pill px-4">عرض ملف مستقل</a>
                 </div>
             </div>
             <div class="col-lg-5">

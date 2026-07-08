@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Wazifni")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dcd163e4259272924cd4ad1ce7f4983c050892ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+066d26b832a41532ca977b9f8684123f4e2385a9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Wazifni")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Wazifni")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

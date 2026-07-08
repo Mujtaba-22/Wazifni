@@ -402,3 +402,12 @@ C:\VS\Wazifni\obj\Release\net10.0\refint\Wazifni.dll
 C:\VS\Wazifni\obj\Release\net10.0\Wazifni.pdb
 C:\VS\Wazifni\obj\Release\net10.0\Wazifni.genruntimeconfig.cache
 C:\VS\Wazifni\obj\Release\net10.0\ref\Wazifni.dll
+C:\VS\Wazifni\bin\Release\net10.0\ar\Wazifni.resources.dll
+C:\VS\Wazifni\bin\Release\net10.0\en-US\Wazifni.resources.dll
+C:\VS\Wazifni\obj\Release\net10.0\Wazifni.Resources.SharedResource.ar.resources
+C:\VS\Wazifni\obj\Release\net10.0\Wazifni.Resources.SharedResource.en-US.resources
+C:\VS\Wazifni\obj\Release\net10.0\Wazifni.csproj.GenerateResource.cache
+C:\VS\Wazifni\obj\Release\net10.0\ar\Wazifni.resources.cs
+C:\VS\Wazifni\obj\Release\net10.0\ar\Wazifni.resources.dll
+C:\VS\Wazifni\obj\Release\net10.0\en-US\Wazifni.resources.cs
+C:\VS\Wazifni\obj\Release\net10.0\en-US\Wazifni.resources.dll

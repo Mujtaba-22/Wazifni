@@ -6,5 +6,29 @@
 <data name="Dashboard" xml:space="preserve"><value>Dashboard</value></data>
 <data name="Copyright" xml:space="preserve"><value>A platform connecting freelancers with employers</value></data>
 <data name="Login" xml:space="preserve"><value>Login</value></data>
+<data name="Register" xml:space="preserve"><value>Register</value></data>
+<data name="Logout" xml:space="preserve"><value>Logout</value></data>
 <data name="My Profile" xml:space="preserve"><value>My Profile</value></data>
+<data name="Management" xml:space="preserve"><value>Management</value></data>
+<data name="DashboardDescription" xml:space="preserve"><value>Create and edit departments and skills from a single location.</value></data>
+<data name="Create Department" xml:space="preserve"><value>Create Department</value></data>
+<data name="Create Skill" xml:space="preserve"><value>Create Skill</value></data>
+<data name="Departments" xml:space="preserve"><value>Departments</value></data>
+<data name="No Departments" xml:space="preserve"><value>No Departments</value></data>
+<data name="Skills" xml:space="preserve"><value>Skills</value></data>
+<data name="No Skills" xml:space="preserve"><value>No Skills</value></data>
+<data name="Freelancer Profile" xml:space="preserve"><value>Freelancer Profile</value></data>
+<data name="Email" xml:space="preserve"><value>Email</value></data>
+<data name="WhatsApp" xml:space="preserve"><value>WhatsApp</value></data>
+<data name="Profile Summary" xml:space="preserve"><value>Profile Summary</value></data>
+<data name="Skills" xml:space="preserve"><value>Skills</value></data>
+<data name="Additional Information" xml:space="preserve"><value>Additional Information</value></data>
+<data name="Department" xml:space="preserve"><value>Department</value></data>
+<data name="Skill" xml:space="preserve"><value>Skill</value></data>
+<data name="Phone" xml:space="preserve"><value>Phone</value></data>
+<data name="City" xml:space="preserve"><value>City</value></data>
+<data name="Years of Experience" xml:space="preserve"><value>Years of Experience</value></data>
+<data name="CV" xml:space="preserve"><value>CV</value></data>
+<data name="Download CV" xml:space="preserve"><value>Download CV</value></data>
+<data name="Years" xml:space="preserve"><value>Years</value></data>
 </root>

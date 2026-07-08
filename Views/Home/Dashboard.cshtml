@@ -1,20 +1,21 @@
 @model DashboardViewModel
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @{
-    ViewData["Title"] = "لوحة التحكم";
+    ViewData["Title"] = SharedLocalizer["Dashboard"];
 }
 
 <section class="py-5">
     <div class="container">
         <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4">
             <div>
-                <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 mb-2">إدارة المحتوى</span>
-                <h1 class="h2 fw-bolder mb-1">لوحة التحكم</h1>
-                <p class="text-muted mb-0">إنشاء وتعديل الأقسام والمهارات من مكان واحد.</p>
+                <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 mb-2">@SharedLocalizer["Management"]</span>
+                <h1 class="h2 fw-bolder mb-1">@SharedLocalizer["Dashboard"]</h1>
+                <p class="text-muted mb-0">@SharedLocalizer["DashboardDescription"]</p>
             </div>
             <div class="d-flex flex-wrap gap-2">
-                <a asp-controller="Department" asp-action="Create" class="btn btn-primary rounded-pill px-4">إضافة قسم</a>
-                <a asp-controller="Skill" asp-action="Create" class="btn btn-outline-primary rounded-pill px-4">إضافة مهارة</a>
+                <a asp-controller="Department" asp-action="Create" class="btn btn-primary rounded-pill px-4">@SharedLocalizer["Create Department"]</a>
+                <a asp-controller="Skill" asp-action="Create" class="btn btn-outline-primary rounded-pill px-4">@SharedLocalizer["Create Skill"]</a>
             </div>
         </div>
 
@@ -28,7 +29,7 @@
                 <div class="card border-0 shadow-sm rounded-4 h-100">
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <h2 class="h5 fw-bold mb-0">الأقسام</h2>
+                            <h2 class="h5 fw-bold mb-0">@SharedLocalizer["Departments"]</h2>
                             <span class="badge text-bg-light border">@Model.Departments.Count</span>
                         </div>
 
@@ -52,7 +53,7 @@
 
                             @if (!Model.Departments.Any())
                             {
-                                <div class="text-muted">لا توجد أقسام بعد.</div>
+                                <div class="text-muted">@SharedLocalizer["No Departments"]</div>
                             }
                         </div>
                     </div>
@@ -63,7 +64,7 @@
                 <div class="card border-0 shadow-sm rounded-4 h-100">
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <h2 class="h5 fw-bold mb-0">المهارات</h2>
+                            <h2 class="h5 fw-bold mb-0">@SharedLocalizer["Skills"]</h2>
                             <span class="badge text-bg-light border">@Model.Skills.Count</span>
                         </div>
 

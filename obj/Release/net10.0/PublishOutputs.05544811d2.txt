@@ -4,6 +4,8 @@ C:\VS\Wazifni\publish\appsettings.json
 C:\VS\Wazifni\publish\Wazifni.dll
 C:\VS\Wazifni\publish\Wazifni.runtimeconfig.json
 C:\VS\Wazifni\publish\Wazifni.pdb
+C:\VS\Wazifni\publish\ar\Wazifni.resources.dll
+C:\VS\Wazifni\publish\en-US\Wazifni.resources.dll
 C:\VS\Wazifni\publish\Azure.Core.dll
 C:\VS\Wazifni\publish\Azure.Identity.dll
 C:\VS\Wazifni\publish\Humanizer.dll
