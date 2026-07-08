@@ -1,7 +1,9 @@
 @model Wazifni.Models.Department
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 
 @{
-    ViewData["Title"] = "إضافة قسم";
+    ViewData["Title"] = SharedLocalizer["CreateDepartment"];
 }
 
 <section class="py-5">

@@ -17,6 +17,14 @@
         },
         "runtime": {
           "Wazifni.dll": {}
+        },
+        "resources": {
+          "ar/Wazifni.resources.dll": {
+            "locale": "ar"
+          },
+          "en-US/Wazifni.resources.dll": {
+            "locale": "en-US"
+          }
         }
       },
       "Azure.Core/1.47.1": {

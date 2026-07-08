@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Wazifni" xml:space="preserve"><value>Wazifni</value></data>
+<data name="Home" xml:space="preserve"><value>Home</value></data>
+<data name="Department" xml:space="preserve"><value>Department</value></data>
+<data name="Dashboard" xml:space="preserve"><value>Dashboard</value></data>
+<data name="Copyright" xml:space="preserve"><value>A platform connecting freelancers with employers</value></data>
+<data name="Login" xml:space="preserve"><value>Login</value></data>
+<data name="My Profile" xml:space="preserve"><value>My Profile</value></data>
+</root>

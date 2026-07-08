@@ -1,9 +1,35 @@
-﻿<!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="light">
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
+    @* حقن المترجم إذا أردت ترجمة الكلمات الثابتة لاحقاً *@
+@inject IViewLocalizer Localizer
+
+@{
+    // التحقق مما إذا كانت اللغة الحالية تُكتب من اليمين لليسار (مثل العربية)
+    var isRTL = CultureInfo.CurrentCulture.TextInfo.IsRightToLeft;
+    var htmlDir = isRTL ? "rtl" : "ltr";
+    var htmlLang = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+   
+   
+}
+
+
+<!DOCTYPE html>
+<html lang="en" >
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - وظفني</title>
+    <script type="importmap"></script>
+      @if (isRTL)
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    }
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -24,18 +50,22 @@
         .wz-footer{border-top:1px solid var(--border);background:var(--surface);padding:1.25rem 0;margin-top:auto}
         .nav-pill{border-radius:999px;padding:.5rem 1rem}
         .nav-link{font-weight:600}
+          .main-content {
+            @(isRTL ? "margin-right: 250px;" : "margin-left: 250px;")
+            min-height: 100vh;
+        }
         [data-theme="dark"] .nav-link{color:var(--text)!important}
         [data-theme="dark"] .text-muted{color:var(--muted)!important}
         [data-theme="dark"] .navbar-toggler-icon{filter:invert(1)}
     </style>
 </head>
-<body>
+<body lang="@htmlLang" dir="@htmlDir">
     <header class="wz-nav shadow-sm">
         <div class="container py-2">
             <nav class="navbar navbar-expand-lg navbar-light p-0">
                 <a class="brand" asp-controller="Home" asp-action="Index">
                     <span class="brand-mark"><i class="bi bi-briefcase-fill"></i></span>
-                    <span>وظفني</span>
+                    <span>@SharedLocalizer["Wazifni"]</span>
                 </a>
 
                 <button class="navbar-toggler border-0 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,28 +75,30 @@
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-1">
                         <li class="nav-item">
-                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active text-primary fw-bold" : "")" asp-controller="Home" asp-action="Index">الرئيسية</a>
+                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active text-primary fw-bold" : "")" asp-controller="Home" asp-action="Index">@SharedLocalizer["Home"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["controller"]?.ToString() == "Department" ? "active text-primary fw-bold" : "")" asp-controller="Department" asp-action="Index">الأقسام</a>
+                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["controller"]?.ToString() == "Department" ? "active text-primary fw-bold" : "")" asp-controller="Department" asp-action="Index">@SharedLocalizer["Department"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["action"]?.ToString() == "Dashboard" ? "active text-primary fw-bold" : "")" asp-controller="Home" asp-action="Dashboard">لوحة التحكم</a>
+                            <a class="nav-link nav-pill @(ViewContext.RouteData.Values["action"]?.ToString() == "Dashboard" ? "active text-primary fw-bold" : "")" asp-controller="Home" asp-action="Dashboard">@SharedLocalizer["Dashboard"]</a>
                         </li>
                     </ul>
+
+                        <partial name="_SelectLanguage" />
 
                     <div class="d-flex align-items-center gap-2">
                         @if (User.Identity?.IsAuthenticated == true)
                         {
-                            <a asp-controller="Home" asp-action="MyProfile" class="btn btn-outline-primary rounded-pill px-3">الملف الشخصي</a>
+                            <a asp-controller="Home" asp-action="MyProfile" class="btn btn-outline-primary rounded-pill px-3">@SharedLocalizer["My Profile"]</a>
                             <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
-                                <button type="submit" class="btn btn-outline-primary rounded-pill px-3">تسجيل الخروج</button>
+                                <button type="submit" class="btn btn-outline-primary rounded-pill px-3">@SharedLocalizer["Logout"]</button>
                             </form>
                         }
                         else
                         {
-                            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary rounded-pill px-3">تسجيل الدخول</a>
-                            <a asp-controller="Account" asp-action="Register" class="btn btn-primary rounded-pill px-3">انضم كمستقل</a>
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary rounded-pill px-3">@SharedLocalizer["Login"]</a>
+                            <a asp-controller="Account" asp-action="Register" class="btn btn-primary rounded-pill px-3">@SharedLocalizer["Register"]</a>
                         }
 
                         <button class="theme-btn" type="button" data-theme-toggle aria-label="Toggle theme">
@@ -85,14 +117,14 @@
     <footer class="wz-footer">
         <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
             <div>
-                <span class="fw-bold text-primary">وظفني</span>
+                <span class="fw-bold text-primary">@SharedLocalizer["Wazifni"]</span>
                 <span class="text-muted mx-2">—</span>
-                <small class="text-muted">منصة ربط المستقلين بأصحاب الأعمال &copy; 2026</small>
+                <small class="text-muted">@SharedLocalizer["Copyright"] &copy; 2026</small>
             </div>
             <div class="d-flex gap-3 small">
-                <a asp-controller="Home" asp-action="Index" class="text-muted text-decoration-none">الرئيسية</a>
-                <a asp-controller="Department" asp-action="Index" class="text-muted text-decoration-none">الأقسام</a>
-                <a asp-controller="Home" asp-action="Profile" class="text-muted text-decoration-none">التفاصيل</a>
+                <a asp-controller="Home" asp-action="Index" class="text-muted text-decoration-none">@SharedLocalizer["Home"]</a>
+                <a asp-controller="Department" asp-action="Index" class="text-muted text-decoration-none">@SharedLocalizer["Departments"]</a>
+                <a asp-controller="Home" asp-action="Profile" class="text-muted text-decoration-none">@SharedLocalizer["Profile"]</a>
             </div>
         </div>
     </footer>
@@ -129,6 +161,9 @@
             }
         })();
     </script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

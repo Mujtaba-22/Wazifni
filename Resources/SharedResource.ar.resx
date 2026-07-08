@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<data name="Wazifni" xml:space="preserve"><value>وظفني </value></data>
+<data name="Home" xml:space="preserve"><value>الرئيسية</value></data>
+<data name="Department" xml:space="preserve"><value>الأقسام</value></data>
+<data name="Dashboard" xml:space="preserve"><value>لوحةالتحكم</value></data>
+<data name="Copyright" xml:space="preserve"><value>منصة ربط المستقلين بأصحاب الأعمال</value></data>
+<data name="Login" xml:space="preserve"><value>تسجيل الدخول</value></data>
+<data name="My Profile" xml:space="preserve"><value>الملف الشخصي</value></data>
+
+</root>

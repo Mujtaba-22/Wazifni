@@ -1,7 +1,8 @@
 ﻿@model Wazifni.ViewModels.LoginViewModel
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = SharedLocalizer["Login"];
 }
 
 <div class="container mt-5">
