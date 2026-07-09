@@ -31,5 +31,15 @@
 <data name="CV" xml:space="preserve"><value>السيرة الذاتية</value></data>
 <data name="Download CV" xml:space="preserve"><value>تحميل CV</value></data>
 <data name="Years" xml:space="preserve"><value>سنوات </value></data>
+<data name="CreateDepartment" xml:space="preserve"><value>إضافة قسم</value></data>
+<data name="CreateDepartmentDescription" xml:space="preserve"><value>أنشئ قسماً جديداً ليظهر في المنصة.</value></data>
+<data name="Back" xml:space="preserve"><value>رجوع</value></data>
+<data name="Icon" xml:space="preserve"><value>الأيقونة</value></data>
+<data name="SaveDepartment" xml:space="preserve"><value>حفظ القسم</value></data>
+<data name="EditDepartment" xml:space="preserve"><value>تعديل القسم</value></data>
+<data name="EditDepartmentDescription" xml:space="preserve"><value>حدّث بيانات القسم ثم احفظ التغييرات.</value></data>
+<data name="SaveChanges" xml:space="preserve"><value>حفظ التعديلات</value></data>
+<data name="Name" xml:space="preserve"><value>الاسم</value></data>
+<data name="Description" xml:space="preserve"><value>الوصف</value></data>
 
 </root>

@@ -20,93 +20,93 @@ build_property.TargetFrameworkVersion = v10.0
 build_property.EntryPointFilePath = 
 build_property.RootNamespace = Wazifni
 build_property.RootNamespace = Wazifni
-build_property.ProjectDir = C:\VS\Wazifni\
+build_property.ProjectDir = C:\Wazifni\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\VS\Wazifni
+build_property.MSBuildProjectDirectory = C:\Wazifni
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/VS/Wazifni/Views/Account/Login.cshtml]
+[C:/Wazifni/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Account/Register.cshtml]
+[C:/Wazifni/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Department/Create.cshtml]
+[C:/Wazifni/Views/Department/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Department/Edit.cshtml]
+[C:/Wazifni/Views/Department/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Department/Index.cshtml]
+[C:/Wazifni/Views/Department/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Home/Dashboard.cshtml]
+[C:/Wazifni/Views/Home/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Home/Index.cshtml]
+[C:/Wazifni/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Home/MyProfile.cshtml]
+[C:/Wazifni/Views/Home/MyProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeVByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Home/Privacy.cshtml]
+[C:/Wazifni/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Home/Profile.cshtml]
+[C:/Wazifni/Views/Home/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Shared/Error.cshtml]
+[C:/Wazifni/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Shared/_SelectLanguage.cshtml]
+[C:/Wazifni/Views/Shared/_SelectLanguage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TZWxlY3RMYW5ndWFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Wazifni/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Skill/Create.cshtml]
+[C:/Wazifni/Views/Skill/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Skill/Edit.cshtml]
+[C:/Wazifni/Views/Skill/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/_ViewImports.cshtml]
+[C:/Wazifni/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/_ViewStart.cshtml]
+[C:/Wazifni/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Views/Shared/_Layout.cshtml]
+[C:/Wazifni/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-lwpz3mrfdt
 
-[C:/VS/Wazifni/Resources/SharedResource.ar.resx]
+[C:/Wazifni/Resources/SharedResource.ar.resx]
 build_metadata.AdditionalFiles.TargetPath = Resources\SharedResource.ar.resx
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/VS/Wazifni/Resources/SharedResource.en-US.resx]
+[C:/Wazifni/Resources/SharedResource.en-US.resx]
 build_metadata.AdditionalFiles.TargetPath = Resources\SharedResource.en-US.resx
 build_metadata.AdditionalFiles.CssScope = 

@@ -31,4 +31,14 @@
 <data name="CV" xml:space="preserve"><value>CV</value></data>
 <data name="Download CV" xml:space="preserve"><value>Download CV</value></data>
 <data name="Years" xml:space="preserve"><value>Years</value></data>
+<data name="CreateDepartment" xml:space="preserve"><value>Create Department</value></data>
+<data name="CreateDepartmentDescription" xml:space="preserve"><value>Create a new department to appear on the platform.</value></data>
+<data name="Back" xml:space="preserve"><value>Back</value></data>
+<data name="Icon" xml:space="preserve"><value>Icon</value></data>
+<data name="SaveDepartment" xml:space="preserve"><value>Save Department</value></data>
+<data name="EditDepartment" xml:space="preserve"><value>Edit Department</value></data>
+<data name="EditDepartmentDescription" xml:space="preserve"><value>Update the department details and save the changes.</value></data>
+<data name="SaveChanges" xml:space="preserve"><value>Save Changes</value></data>
+<data name="Name" xml:space="preserve"><value>Name</value></data>
+<data name="Description" xml:space="preserve"><value>Description</value></data>
 </root>
