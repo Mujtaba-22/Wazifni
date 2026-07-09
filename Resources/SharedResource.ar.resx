@@ -65,4 +65,70 @@
 <data name="Edit Skill Description" xml:space="preserve"><value>حدّث اسم المهارة ثم احفظ التغييرات.</value></data>
 <data name="Enter a brief description about yourself" xml:space="preserve"><value>اكتب نبذة مختصرة عنك...</value></data>
 <data name="Add a new skill" xml:space="preserve"><value>أضف مهارة جديدة</value></data>
+
+<data name="Programming" xml:space="preserve">
+  <value>البرمجة</value>
+</data>
+
+<data name="Freelancers" xml:space="preserve">
+  <value>المستقلون</value>
+</data>
+
+<data name="Browse Freelancers" xml:space="preserve">
+  <value>تصفح المستقلين</value>
+</data>
+
+<data name="Search" xml:space="preserve">
+  <value>ابحث...</value>
+</data>
+
+<data name="All Skills" xml:space="preserve">
+  <value>كل المهارات</value>
+</data>
+
+<data name="View Profile" xml:space="preserve">
+  <value>عرض الملف</value>
+</data>
+
+<data name="Contact" xml:space="preserve">
+  <value>تواصل</value>
+</data>
+
+<data name="Department Section" xml:space="preserve">
+  <value>قسم</value>
+</data>
+
+<data name="Freelancer Count" xml:space="preserve">
+  <value>مستقل</value>
+</data>
+<data name="Warning" xml:space="preserve">
+  <value>تنبيه!</value>
+</data>
+
+<data name="CVMissingMessage" xml:space="preserve">
+  <value>لم تقم برفع سيرتك الذاتية حتى الآن، ولن يظهر ملفك الشخصي للمستخدمين بشكل كامل.</value>
+</data>
+
+<data name="CompleteProfileNow" xml:space="preserve">
+  <value>اضغط هنا لإكمال ملفك الشخصي.</value>
+</data>
+
+<data name="WhyWazifni" xml:space="preserve">
+  <value>لماذا وظفني؟</value>
+</data>
+<data name="Warning" xml:space="preserve">
+  <value>Warning!</value>
+</data>
+
+<data name="CVMissingMessage" xml:space="preserve">
+  <value>You have not uploaded your CV yet. Your profile will not be fully visible to employers.</value>
+</data>
+
+<data name="CompleteProfileNow" xml:space="preserve">
+  <value>Click here to complete your profile.</value>
+</data>
+
+<data name="WhyWazifni" xml:space="preserve">
+  <value>Why Wazifni?</value>
+</data>
 </root>

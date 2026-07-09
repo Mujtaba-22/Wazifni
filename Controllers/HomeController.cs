@@ -25,16 +25,27 @@ public class HomeController : Controller
         _userManager = userManager;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
+        if (User.Identity != null && User.Identity.IsAuthenticated)
+        {
+            var userId = _userManager.GetUserId(User);
+
+            var freelancer = await _dbContext.Freelancers
+                .AsNoTracking()
+                .FirstOrDefaultAsync(f => f.UserId == userId);
+
+            ViewBag.ShowCvAlert = freelancer == null || string.IsNullOrWhiteSpace(freelancer.CVFile);
+        }
+
         var model = new HomeIndexViewModel
         {
             Features = new List<FeatureItemViewModel>
-            {
-                new() { Icon = "bi-check-circle-fill", Title = "واجهة عربية واضحة", Description = "تجربة تصفح مباشرة وسهلة للمستخدم." },
-                new() { Icon = "bi-check-circle-fill", Title = "صفحات جاهزة", Description = "عرض المستقلين والأقسام بشكل منظم." },
-                new() { Icon = "bi-check-circle-fill", Title = "Bootstrap متجاوب", Description = "تناسق كامل مع الأجهزة المختلفة والوضع الليلي." }
-            }
+        {
+            new() { Icon = "bi-check-circle-fill", Title = "واجهة عربية واضحة", Description = "تجربة تصفح مباشرة وسهلة للمستخدم." },
+            new() { Icon = "bi-check-circle-fill", Title = "صفحات جاهزة", Description = "عرض المستقلين والأقسام بشكل منظم." },
+            new() { Icon = "bi-check-circle-fill", Title = "Bootstrap متجاوب", Description = "تناسق كامل مع الأجهزة المختلفة والوضع الليلي." }
+        }
         };
 
         return View(model);

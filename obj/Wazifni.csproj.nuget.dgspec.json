@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\VS\\Wazifni\\Wazifni.csproj": {}
+    "E:\\Wazifni\\Wazifni.csproj": {}
   },
   "projects": {
-    "C:\\VS\\Wazifni\\Wazifni.csproj": {
+    "E:\\Wazifni\\Wazifni.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\VS\\Wazifni\\Wazifni.csproj",
+        "projectUniqueName": "E:\\Wazifni\\Wazifni.csproj",
         "projectName": "Wazifni",
-        "projectPath": "C:\\VS\\Wazifni\\Wazifni.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\VS\\Wazifni\\obj\\",
+        "projectPath": "E:\\Wazifni\\Wazifni.csproj",
+        "packagesPath": "C:\\Users\\Saada\\.nuget\\packages\\",
+        "outputPath": "E:\\Wazifni\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Saada\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
