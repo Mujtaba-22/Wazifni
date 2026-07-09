@@ -1,7 +1,8 @@
 @model Wazifni.Models.Skill
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @{
-    ViewData["Title"] = "إضافة مهارة";
+    ViewData["Title"] = @SharedLocalizer["Create Skill"];
 }
 
 <section class="py-5">
@@ -12,10 +13,10 @@
                     <div class="card-body p-4 p-md-5">
                         <div class="d-flex align-items-center justify-content-between mb-4">
                             <div>
-                                <h1 class="h3 fw-bold mb-1">إضافة مهارة جديدة</h1>
-                                <p class="text-muted mb-0">أنشئ مهارة جديدة لربطها بالمستقلين.</p>
+                                <h1 class="h3 fw-bold mb-1">@SharedLocalizer["Create Skill"]</h1>
+                                <p class="text-muted mb-0">@SharedLocalizer["Create Skill Description"]</p>
                             </div>
-                            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary rounded-pill">رجوع</a>
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary rounded-pill">@SharedLocalizer["Back"]</a>
                         </div>
 
                         <form asp-action="Create" method="post">
@@ -27,7 +28,7 @@
                                 <span asp-validation-for="Name" class="text-danger"></span>
                             </div>
 
-                            <button type="submit" class="btn btn-primary rounded-pill px-4">حفظ المهارة</button>
+                            <button type="submit" class="btn btn-primary rounded-pill px-4">@SharedLocalizer["Save Skill"]</button>
                         </form>
                     </div>
                 </div>

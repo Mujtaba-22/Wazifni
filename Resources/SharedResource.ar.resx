@@ -59,4 +59,10 @@
 <data name="Remember Me" xml:space="preserve"><value>تذكرني</value></data>
 <data name="Sign In" xml:space="preserve"><value>تسجيل الدخول</value></data>
 <data name="Create New Account" xml:space="preserve"><value>إنشاء حساب جديد</value></data>
+
+<data name="Create Skill Description" xml:space="preserve"><value>أنشئ مهارة جديدة لربطها بالمستقلين.</value></data>
+<data name="Edit Skill" xml:space="preserve"><value>تعديل المهارة</value></data>
+<data name="Edit Skill Description" xml:space="preserve"><value>حدّث اسم المهارة ثم احفظ التغييرات.</value></data>
+<data name="Enter a brief description about yourself" xml:space="preserve"><value>اكتب نبذة مختصرة عنك...</value></data>
+<data name="Add a new skill" xml:space="preserve"><value>أضف مهارة جديدة</value></data>
 </root>

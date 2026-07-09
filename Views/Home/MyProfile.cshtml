@@ -1,15 +1,16 @@
 @model FreelancerProfileViewModel
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @{
-    ViewData["Title"] = "ملفي الشخصي";
+    ViewData["Title"] = @SharedLocalizer["My Profile"];
 }
 
 <section class="py-4">
     <div class="container">
         <nav aria-label="breadcrumb" class="mb-3">
             <ol class="breadcrumb bg-transparent p-0 mb-0">
-                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" class="text-decoration-none">الرئيسية</a></li>
-                <li class="breadcrumb-item active">ملفي الشخصي</li>
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" class="text-decoration-none">@SharedLocalizer["Home"]</a></li>
+                <li class="breadcrumb-item active">@SharedLocalizer["My Profile"]</li>
             </ol>
         </nav>
 
@@ -43,14 +44,14 @@
 
                     <input asp-for="FullName"
                            class="form-control form-control-lg bg-transparent text-white border-0 border-bottom fw-bold mb-1 p-0"
-                           placeholder="الاسم الكامل"
+                           placeholder="@SharedLocalizer["Full Name"]"
                            style="max-width:320px;" />
 
                     <span asp-validation-for="FullName" class="text-warning small d-block"></span>
 
                     <input asp-for="Title"
                            class="form-control bg-transparent text-white border-0 border-bottom p-0"
-                           placeholder="المسمى المهني"
+                           placeholder="@SharedLocalizer["Job Title"]"
                            style="max-width:320px;" />
 
                     <span asp-validation-for="Title" class="text-warning small d-block"></span>
@@ -71,12 +72,12 @@
 
                     <button type="submit" class="btn btn-light rounded-pill px-4">
                         <i class="bi bi-check2-circle me-1"></i>
-                        حفظ التغييرات
+                        @SharedLocalizer["Save Changes"]
                     </button>
 
                     <a asp-action="MyProfile"
                        class="btn btn-outline-light rounded-pill px-4">
-                        إلغاء
+                        @SharedLocalizer["Cancel"]
                     </a>
 
                 </div>
@@ -92,18 +93,18 @@
                 <div class="col-lg-8">
 
                     <h2 class="h5 fw-bold mb-3">
-                        النبذة التعريفية
+                        @SharedLocalizer["Profile Summary"]
                     </h2>
 
                     <textarea asp-for="Bio"
                               class="form-control"
                               rows="5"
-                              placeholder="اكتب نبذة مختصرة عنك..."></textarea>
+                              placeholder="@SharedLocalizer["Enter a brief description about yourself"]"></textarea>
 
                     <span asp-validation-for="Bio" class="text-danger small"></span>
 
                     <h3 class="h6 fw-bold mt-4 mb-3">
-                        المهارات
+                        @SharedLocalizer["Skills"]
                     </h3>
 
                     <div class="d-flex flex-wrap gap-2 mb-2" id="skillsContainer">
@@ -131,7 +132,7 @@
                         <input type="text"
                                id="newSkillInput"
                                class="form-control"
-                               placeholder="أضف مهارة جديدة" />
+                               placeholder="@SharedLocalizer["Add a new skill"]" />
 
                         <button type="button"
                                 id="addSkillBtn"
@@ -148,7 +149,7 @@
                     <div class="border rounded-4 p-4 bg-body-tertiary h-100">
 
                         <h2 class="h6 fw-bold mb-3">
-                            معلومات إضافية
+                            @SharedLocalizer["Additional Information"]
                         </h2>
 
                         <div class="d-grid gap-3">
@@ -160,7 +161,7 @@
                                         </div>
 
                                         <div class="flex-grow-1">
-                                            <small class="text-muted d-block">القسم</small>
+                                            <small class="text-muted d-block">@SharedLocalizer["Department"]</small>
                                             <span class="fw-semibold">@Model.DepartmentName</span>
                                         </div>
 
@@ -176,7 +177,7 @@
                                         <div class="flex-grow-1">
 
                                             <small class="text-muted d-block">
-                                                البريد الإلكتروني
+                                                    @SharedLocalizer["Email Address"]
                                             </small>
 
                                             <input asp-for="Email"
@@ -199,7 +200,7 @@
                                         <div class="flex-grow-1">
 
                                             <small class="text-muted d-block">
-                                                الجوال
+                                                @SharedLocalizer["Phone"]
                                             </small>
 
                                             <input asp-for="Phone"
@@ -222,7 +223,7 @@
                                         <div class="flex-grow-1">
 
                                             <small class="text-muted d-block">
-                                                المدينة
+                                                @SharedLocalizer["City"]
                                             </small>
 
                                             <input asp-for="City"
@@ -242,7 +243,7 @@
                                         <div class="flex-grow-1">
 
                                             <small class="text-muted d-block">
-                                                سنوات الخبرة
+                                                @SharedLocalizer["Years of Experience"]
                                             </small>
 
                                             <input asp-for="YearsExperience"
@@ -264,7 +265,7 @@
                                         <div class="flex-grow-1">
 
                                             <small class="text-muted d-block">
-                                                السيرة الذاتية
+                                                @SharedLocalizer["Upload CV"]
                                             </small>
 
                                             @if (!string.IsNullOrEmpty(Model.CvUrl))
@@ -272,7 +273,7 @@
                                                 <a href="@Model.CvUrl"
                                                    download
                                                    class="text-decoration-none fw-semibold d-block mb-2">
-                                                    تحميل السيرة الحالية
+                                                    @SharedLocalizer["Download CV"]
                                                 </a>
                                             }
 
