@@ -41,4 +41,72 @@
 <data name="SaveChanges" xml:space="preserve"><value>Save Changes</value></data>
 <data name="Name" xml:space="preserve"><value>Name</value></data>
 <data name="Description" xml:space="preserve"><value>Description</value></data>
+
+<data name="Create Account" xml:space="preserve">
+    <value>Create Account</value>
+</data>
+
+<data name="Full Name" xml:space="preserve">
+    <value>Full Name</value>
+</data>
+
+<data name="Confirm Password" xml:space="preserve">
+    <value>Confirm Password</value>
+</data>
+
+<data name="Freelancer Information" xml:space="preserve">
+    <value>Freelancer Information</value>
+</data>
+
+<data name="Select Department" xml:space="preserve">
+    <value>-- Select Department --</value>
+</data>
+
+<data name="Primary Skill" xml:space="preserve">
+    <value>Primary Skill</value>
+</data>
+
+<data name="Select Skill" xml:space="preserve">
+    <value>-- Select Skill --</value>
+</data>
+
+<data name="Bio" xml:space="preserve">
+    <value>Profile Summary</value>
+</data>
+
+<data name="LinkedIn URL" xml:space="preserve">
+    <value>LinkedIn URL</value>
+</data>
+
+<data name="CV URL" xml:space="preserve">
+    <value>CV URL</value>
+</data>
+
+<data name="Sign Up" xml:space="preserve">
+    <value>Sign Up</value>
+</data>
+
+<data name="Already Have an Account" xml:space="preserve">
+    <value>Already have an account? Sign in</value>
+</data>
+
+<data name="Email Address" xml:space="preserve">
+    <value>Email Address</value>
+</data>
+
+<data name="Password" xml:space="preserve">
+    <value>Password</value>
+</data>
+
+<data name="Remember Me" xml:space="preserve">
+    <value>Remember Me</value>
+</data>
+
+<data name="Sign In" xml:space="preserve">
+    <value>Sign In</value>
+</data>
+
+<data name="Create New Account" xml:space="preserve">
+    <value>Create New Account</value>
+</data>
 </root>

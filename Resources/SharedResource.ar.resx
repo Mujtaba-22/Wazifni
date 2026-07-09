@@ -42,4 +42,21 @@
 <data name="Name" xml:space="preserve"><value>الاسم</value></data>
 <data name="Description" xml:space="preserve"><value>الوصف</value></data>
 
+<data name="Create Account" xml:space="preserve"><value>إنشاء حساب</value></data>
+<data name="Full Name" xml:space="preserve"><value>الاسم الكامل</value></data>
+<data name="Confirm Password" xml:space="preserve"><value>التحقق من كلمة المرور</value></data>
+<data name="Freelancer Information" xml:space="preserve"><value>بيانات المستقل</value></data>
+<data name="Select Department" xml:space="preserve"><value>-- اختر القسم --</value></data>
+<data name="Primary Skill" xml:space="preserve"><value>المهارة الرئيسية</value></data>
+<data name="Select Skill" xml:space="preserve"><value>-- اختر المهارة --</value></data>
+<data name="Bio" xml:space="preserve"><value>نبذة مختصرة</value></data>
+<data name="LinkedIn URL" xml:space="preserve"><value>رابط لينكدإن</value></data>
+<data name="CV URL" xml:space="preserve"><value>رابط السيرة الذاتية</value></data>
+<data name="Sign Up" xml:space="preserve"><value>تسجيل</value></data>
+<data name="Already Have an Account" xml:space="preserve"><value>لديك حساب بالفعل؟ سجل الدخول</value></data>
+<data name="Email Address" xml:space="preserve"><value>البريد الإلكتروني</value></data>
+<data name="Password" xml:space="preserve"><value>كلمة المرور</value></data>
+<data name="Remember Me" xml:space="preserve"><value>تذكرني</value></data>
+<data name="Sign In" xml:space="preserve"><value>تسجيل الدخول</value></data>
+<data name="Create New Account" xml:space="preserve"><value>إنشاء حساب جديد</value></data>
 </root>

@@ -1,6 +1,7 @@
 ﻿@model Wazifni.ViewModels.LoginViewModel
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IHtmlLocalizer<SharedResource> SharedLocalizer
+
 @{
     ViewData["Title"] = SharedLocalizer["Login"];
 }
@@ -14,7 +15,7 @@
             <div class="card shadow">
 
                 <div class="card-header text-center">
-                    <h3>Login</h3>
+                    <h3>@SharedLocalizer["Login"]</h3>
                 </div>
 
                 <div class="card-body">
@@ -24,24 +25,26 @@
                         <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
                         <div class="mb-3">
-                            <label asp-for="Email" class="form-label"></label>
+                            <label asp-for="Email" class="form-label">@SharedLocalizer["Email"]</label>
                             <input asp-for="Email" class="form-control" />
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="Password" class="form-label"></label>
+                            <label asp-for="Password" class="form-label">@SharedLocalizer["Password"]</label>
                             <input asp-for="Password" class="form-control" />
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
-                        
+
                         <div class="form-check mb-3">
                             <input asp-for="RememberMe" class="form-check-input" />
-                            <label asp-for="RememberMe" class="form-check-label"></label>
+                            <label asp-for="RememberMe" class="form-check-label">
+                                @SharedLocalizer["Remember Me"]
+                            </label>
                         </div>
 
                         <button class="btn btn-success w-100">
-                            Login
+                            @SharedLocalizer["Login"]
                         </button>
 
                     </form>
@@ -49,7 +52,7 @@
                     <hr />
 
                     <a asp-action="Register">
-                        Create New Account
+                        @SharedLocalizer["Create New Account"]
                     </a>
 
                 </div>

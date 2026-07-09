@@ -13,6 +13,7 @@ public class DepartmentController : Controller
     public DepartmentController(AppDbContext dbContext)
     {
         _dbContext = dbContext;
+
     }
 
     public async Task<IActionResult> Index(int? id)

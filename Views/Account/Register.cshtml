@@ -1,7 +1,9 @@
 ﻿@model Wazifni.ViewModels.RegisterViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = SharedLocalizer["Register"];
 }
 
 <div class="container mt-5">
@@ -12,7 +14,7 @@
             <div class="card shadow">
 
                 <div class="card-header text-center">
-                    <h3>Create Account</h3>
+                    <h3>@SharedLocalizer["Create Account"]</h3>
                 </div>
 
                 <div class="card-body">
@@ -22,86 +24,87 @@
                         <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
                         <div class="mb-3">
-                            <label asp-for="FullName" class="form-label"></label>
+                            <label asp-for="FullName" class="form-label">@SharedLocalizer["Full Name"]</label>
                             <input asp-for="FullName" class="form-control" />
                             <span asp-validation-for="FullName" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="Email" class="form-label"></label>
+                            <label asp-for="Email" class="form-label">@SharedLocalizer["Email"]</label>
                             <input asp-for="Email" class="form-control" />
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="Password" class="form-label"></label>
+                            <label asp-for="Password" class="form-label">@SharedLocalizer["Password"]</label>
                             <input asp-for="Password" class="form-control" />
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="ConfirmPassword" class="form-label"></label>
+                            <label asp-for="ConfirmPassword" class="form-label">@SharedLocalizer["Confirm Password"]</label>
                             <input asp-for="ConfirmPassword" class="form-control" />
                             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                         </div>
 
                         <hr class="my-4" />
 
-                        <h5 class="mb-3">بيانات المستقل</h5>
+                        <h5 class="mb-3">@SharedLocalizer["Freelancer Information"]</h5>
 
                         <div class="mb-3">
-                            <label asp-for="Phone" class="form-label">رقم الجوال</label>
+                            <label asp-for="Phone" class="form-label">@SharedLocalizer["Phone"]</label>
                             <input asp-for="Phone" class="form-control" />
                             <span asp-validation-for="Phone" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="DeptId" class="form-label">القسم</label>
+                            <label asp-for="DeptId" class="form-label">@SharedLocalizer["Department"]</label>
                             <select asp-for="DeptId" asp-items="Model.DepartmentOptions" class="form-select">
-                                <option value="">-- اختر القسم --</option>
+                                <option value="">@SharedLocalizer["Select Department"]</option>
                             </select>
                             <span asp-validation-for="DeptId" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="SkillId" class="form-label">المهارة الرئيسية</label>
+                            <label asp-for="SkillId" class="form-label">@SharedLocalizer["Primary Skill"]</label>
                             <select asp-for="SkillId" asp-items="Model.SkillOptions" class="form-select">
-                                <option value="">-- اختر المهارة --</option>
+                                <option value="">@SharedLocalizer["Select Skill"]</option>
                             </select>
                             <span asp-validation-for="SkillId" class="text-danger"></span>
                         </div>
-                        <dialog class="mb-3">
-                            <label asp-for="YearsExperience" class="form-label">سنوات الخبرة</label>
-                            <input asp-for="YearsExperience" class="form-control" type="number" min="0" />
-                            <span asp-validation-for="YearsExperience" class="text-danger"></span>
-                        </dialog>
 
                         <div class="mb-3">
-                            <label asp-for="Bio" class="form-label">نبذة مختصرة</label>
+                            <label asp-for="YearsExperience" class="form-label">@SharedLocalizer["Years of Experience"]</label>
+                            <input asp-for="YearsExperience" class="form-control" type="number" min="0" />
+                            <span asp-validation-for="YearsExperience" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Bio" class="form-label">@SharedLocalizer["Bio"]</label>
                             <textarea asp-for="Bio" class="form-control" rows="3"></textarea>
                             <span asp-validation-for="Bio" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="City" class="form-label">المدينة</label>
+                            <label asp-for="City" class="form-label">@SharedLocalizer["City"]</label>
                             <input asp-for="City" class="form-control" />
                             <span asp-validation-for="City" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="LinkedInUrl" class="form-label">رابط LinkedIn</label>
+                            <label asp-for="LinkedInUrl" class="form-label">@SharedLocalizer["LinkedIn URL"]</label>
                             <input asp-for="LinkedInUrl" class="form-control" />
                             <span asp-validation-for="LinkedInUrl" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="CvUrl" class="form-label">رابط السيرة الذاتية</label>
+                            <label asp-for="CvUrl" class="form-label">@SharedLocalizer["CV URL"]</label>
                             <input asp-for="CvUrl" class="form-control" />
                             <span asp-validation-for="CvUrl" class="text-danger"></span>
                         </div>
 
                         <button class="btn btn-primary w-100">
-                            Register
+                            @SharedLocalizer["Sign Up"]
                         </button>
 
                     </form>
@@ -109,7 +112,7 @@
                     <hr />
 
                     <a asp-action="Login">
-                        Already have an account?
+                        @SharedLocalizer["Already Have an Account"]
                     </a>
 
                 </div>

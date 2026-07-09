@@ -402,7 +402,6 @@ E:\Wazifni\obj\Debug\net10.0\compressed\a3ygkwa5zy-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
 E:\Wazifni\obj\Debug\net10.0\compressed\nezrqnk58p-{0}-muycvpuwrr-muycvpuwrr.gz
 E:\Wazifni\obj\Debug\net10.0\compressed\v0zgfp0y55-{0}-87fc7y1x7t-87fc7y1x7t.gz
 E:\Wazifni\obj\Debug\net10.0\compressed\yfc7ypekbg-{0}-mlv21k5csn-mlv21k5csn.gz
-E:\Wazifni\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\VS\Wazifni\obj\TempBuild\appsettings.Development.json
 C:\VS\Wazifni\obj\TempBuild\appsettings.json
 C:\VS\Wazifni\obj\TempBuild\Wazifni.staticwebassets.runtime.json
@@ -1478,3 +1477,11 @@ C:\Wazifni\obj\Debug\net10.0\refint\Wazifni.dll
 C:\Wazifni\obj\Debug\net10.0\Wazifni.pdb
 C:\Wazifni\obj\Debug\net10.0\Wazifni.genruntimeconfig.cache
 C:\Wazifni\obj\Debug\net10.0\ref\Wazifni.dll
+E:\Wazifni\bin\Debug\net10.0\ar\Wazifni.resources.dll
+E:\Wazifni\bin\Debug\net10.0\en-US\Wazifni.resources.dll
+E:\Wazifni\obj\Debug\net10.0\Wazifni.Resources.SharedResource.ar.resources
+E:\Wazifni\obj\Debug\net10.0\Wazifni.Resources.SharedResource.en-US.resources
+E:\Wazifni\obj\Debug\net10.0\Wazifni.csproj.GenerateResource.cache
+E:\Wazifni\obj\Debug\net10.0\ar\Wazifni.resources.dll
+E:\Wazifni\obj\Debug\net10.0\en-US\Wazifni.resources.dll
+E:\Wazifni\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
