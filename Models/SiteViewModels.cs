@@ -21,6 +21,7 @@ public class FeatureItemViewModel
 
 public class FreelancerProfileViewModel
 {
+    public int FreelancerId { get; set; }
     [Required]
     public string FullName { get; set; } = string.Empty;
 
